@@ -16,6 +16,7 @@ export const ColorThemeProvider = ({ children }: React.PropsWithChildren) => {
 
   const toggleTheme = async () => {
     if ("startViewTransition" in document) {
+      // needs to instal @types/dom-view-transitions
       await document.startViewTransition(() => {
         flushSync(() => {
           setTheme(theme === "light" ? "dark" : "light");
